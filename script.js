@@ -1,9 +1,9 @@
-import { Application } from "@splinetool/runtime";
-
-const canvas = document.getElementById("canvas");
-const spline = new Application(canvas);
-
 document.addEventListener("DOMContentLoaded", function () {
+  // Initialize the spline application
+  const canvas = document.getElementById("canvas");
+  const spline = new Application(canvas);
+
+  // Start loader animation
   startLoader();
 
   function startLoader() {
@@ -12,13 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
     var currentValue = 0;
 
     function updateCounter() {
-      if (currentValue === 100) {
+      if (currentValue >= 100) {
+        // Adjusted to handle edge case where currentValue might exceed 100
         animateText();
         return;
       }
 
       currentValue += Math.floor(Math.random() * 10) + 1;
       currentValue = currentValue > 100 ? 100 : currentValue;
+
+      // Update counter with span elements
       counterElement.innerHTML =
         currentValue
           .toString()
@@ -46,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ease: "power3.inOut",
           duration: 1,
         });
+
         gsap.to(".logo p span", {
           top: "-400px",
           stagger: 0.1,
@@ -59,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ease: "power3.inOut",
           duration: 1,
           delay: 4,
-          onComplete: loadspline, 
+          onComplete: loadspline,
         });
       }, 300);
     }
@@ -68,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function loadspline() {
+    // Load spline scene
     spline
       .load("https://prod.spline.design/hoU1IRriLYqe4Tq4/scene.splinecode")
       .then(() => {
@@ -76,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function addInteractions() {
+    // Find and interact with spline object
     const obj =
       spline.findObjectByName("obj") ||
       spline.findObjectById("8174f8a8-928a-4f7e-a036-a0942060badb");
@@ -85,12 +91,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gsap.set(position, { y: -800 });
 
-    gsap.set(rotation, { x: 0.1, y: 4.24, z: 0.08 });
-
-    const tlspline = gsap.timeline({
-      defaults: { duration: 3.2, ease: "expo.inOut" },
+    gsap.to(position, {
+      y: 80,
+      duration: 3.2,
+      ease: "expo.inOut",
     });
 
-    tlspline.to(position, { y: 80 }).to(rotation, { y: 0.24 }, 0);
+    gsap.to(rotation, {
+      y: 0.24,
+      duration: 3.2,
+      ease: "expo.inOut",
+      delay: -3.2, // Adjusted delay to synchronize with position animation
+    });
   }
 });
