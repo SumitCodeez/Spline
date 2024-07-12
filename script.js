@@ -96,33 +96,25 @@ const spline = new Application(canvas);
 spline
   .load("https://prod.spline.design/hoU1IRriLYqe4Tq4/scene.splinecode")
   .then(() => {
-    // Add interaction once the scene is loaded
     addInteractions();
   });
 
 function addInteractions() {
-  // Find the object by name
-  const myObject = spline.findObjectByName("MyObjectName");
+  const myObject = spline.findObjectByName("obj");
 
-  // Check if the object is found
   if (myObject) {
-    // Add event listener for click event
     myObject.on("click", (event) => {
       console.log("Object clicked!", event);
-      // Example: change color on click
       myObject.material.color.set("#ff0000");
     });
 
-    // Add event listener for hover event
     myObject.on("pointerover", (event) => {
       console.log("Object hovered!", event);
-      // Example: scale up on hover
       myObject.scale.set(1.2, 1.2, 1.2);
     });
 
     myObject.on("pointerout", (event) => {
       console.log("Object hover out!", event);
-      // Example: scale back to original size on hover out
       myObject.scale.set(1, 1, 1);
     });
   } else {
