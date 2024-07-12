@@ -100,7 +100,7 @@ spline
   });
 
 function addInteractions() {
-  const myObject = spline.findObjectByName("obj");
+  const myObject = spline.findObjectById("8174f8a8-928a-4f7e-a036-a0942060badb");
 
   if (myObject) {
     myObject.on("click", (event) => {
