@@ -93,46 +93,35 @@ import { Application } from "@splinetool/runtime";
 const canvas = document.getElementById("canvas");
 const spline = new Application(canvas);
 
-let mouseX = 0;
-let mouseY = 0;
+const init = () => {
+  loadspline();
+};
 
-// Track mouse movement
-canvas.addEventListener("mousemove", (event) => {
-  mouseX = event.clientX - canvas.offsetLeft;
-  mouseY = event.clientY - canvas.offsetTop;
-});
+const loadspline = async () => {
+  spline
+    .load("https://prod.spline.design/hoU1IRriLYqe4Tq4/scene.splinecode")
+    .then(() => {
+      addInteractions();
+    });
+};
+const addInteractions = () => {
+  const obj =
+    spline.findObjectByName("obj") ||
+    spline.findObjectById("8174f8a8-928a-4f7e-a036-a0942060badb");
 
-spline
-  .load("https://prod.spline.design/hoU1IRriLYqe4Tq4/scene.splinecode")
-  .then(() => {
-    // After loading, animate the object
-    addInteractions();
+  const position = obj.position;
+  const rotation = obj.rotation;
+
+  gsap.set(position, { y: -800 });
+
+  gsap.set(rotation, { x: 0.1, y: 4.24, z: 0.08 });
+
+  const tlspline = gsap.timeline({
+    defaults: { duration: 3.2, ease: "expo.inOut" },
   });
 
-function addInteractions() {
-  const myObject = spline.findObjectById(
-    "8174f8a8-928a-4f7e-a036-a0942060badb"
-  );
+  tlspline.to(position, { y: 300 }).to(rotation, { y: 0.24 }, 0);
+};
 
-  if (myObject) {
-
-    function animate() {
-      const targetX = mouseX - canvas.width / 2;
-      const targetY = canvas.height / 2 - mouseY;
-
-      const ease = 0.1; // Adjust ease value for smoothness
-      myObject.position.x += (targetX - myObject.position.x) * ease;
-      myObject.position.y += (targetY - myObject.position.y) * ease;
-
-      spline.render();
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  } else {
-    console.error("Object not found");
-  }
-}
-
+window.addEventListener("DOMContentLoaded", init);
 startLoader();
