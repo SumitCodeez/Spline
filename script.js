@@ -103,17 +103,17 @@ function addInteractions() {
   const myObject = spline.findObjectById("8174f8a8-928a-4f7e-a036-a0942060badb");
 
   if (myObject) {
-    myObject.on("click", (event) => {
+    myObject.addEventListener("click", (event) => {
       console.log("Object clicked!", event);
       myObject.material.color.set("#ff0000");
     });
 
-    myObject.on("pointerover", (event) => {
+    myObject.addEventListener("pointerover", (event) => {
       console.log("Object hovered!", event);
       myObject.scale.set(1.2, 1.2, 1.2);
     });
 
-    myObject.on("pointerout", (event) => {
+    myObject.addEventListener("pointerout", (event) => {
       console.log("Object hover out!", event);
       myObject.scale.set(1, 1, 1);
     });
