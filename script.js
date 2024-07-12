@@ -92,34 +92,6 @@ import { Application } from "@splinetool/runtime";
 
 const canvas = document.getElementById("canvas");
 const spline = new Application(canvas);
-
-spline
-  .load("https://prod.spline.design/hoU1IRriLYqe4Tq4/scene.splinecode")
-  .then(() => {
-    addInteractions();
-  });
-
-function addInteractions() {
-  const myObject = spline.findObjectById("8174f8a8-928a-4f7e-a036-a0942060badb");
-
-  if (myObject) {
-    myObject.addEventListener("click", (event) => {
-      console.log("Object clicked!", event);
-      myObject.material.color.set("#ff0000");
-    });
-
-    myObject.addEventListener("pointerover", (event) => {
-      console.log("Object hovered!", event);
-      myObject.scale.set(1.2, 1.2, 1.2);
-    });
-
-    myObject.addEventListener("pointerout", (event) => {
-      console.log("Object hover out!", event);
-      myObject.scale.set(1, 1, 1);
-    });
-  } else {
-    console.error("Object not found");
-  }
-}
+spline.load("https://prod.spline.design/hoU1IRriLYqe4Tq4/scene.splinecode");
 
 startLoader();
