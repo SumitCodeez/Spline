@@ -124,4 +124,4 @@ const addInteractions = () => {
 };
 
 window.addEventListener("DOMContentLoaded", init);
-// startLoader();
+startLoader();
