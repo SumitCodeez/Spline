@@ -120,7 +120,7 @@ const addInteractions = () => {
     defaults: { duration: 3.2, ease: "expo.inOut" },
   });
 
-  tlspline.to(position, { y: 300 }).to(rotation, { y: 0.24 }, 0);
+  tlspline.to(position, { y: 500 }).to(rotation, { y: 0.24 }, 0);
 };
 
 window.addEventListener("DOMContentLoaded",init)
