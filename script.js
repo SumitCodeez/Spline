@@ -92,6 +92,49 @@ import { Application } from "@splinetool/runtime";
 
 const canvas = document.getElementById("canvas");
 const spline = new Application(canvas);
-spline.load("https://prod.spline.design/hoU1IRriLYqe4Tq4/scene.splinecode");
+
+let mouseX = 0;
+let mouseY = 0;
+
+// Track mouse movement
+canvas.addEventListener("mousemove", (event) => {
+  mouseX = event.clientX - canvas.offsetLeft;
+  mouseY = event.clientY - canvas.offsetTop;
+});
+
+spline
+  .load("https://prod.spline.design/hoU1IRriLYqe4Tq4/scene.splinecode")
+  .then(() => {
+    // After loading, animate the object
+    addInteractions();
+  });
+
+function addInteractions() {
+  const myObject = spline.findObjectById(
+    "8174f8a8-928a-4f7e-a036-a0942060badb"
+  );
+
+  if (myObject) {
+    // Apply CSS animation for bounce-in effect
+    myObject.element.style.animation = "bounceIn 1s forwards";
+
+    function animate() {
+      const targetX = mouseX - canvas.width / 2;
+      const targetY = canvas.height / 2 - mouseY;
+
+      const ease = 0.1; // Adjust ease value for smoothness
+      myObject.position.x += (targetX - myObject.position.x) * ease;
+      myObject.position.y += (targetY - myObject.position.y) * ease;
+
+      spline.render();
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  } else {
+    console.error("Object not found");
+  }
+}
 
 startLoader();
