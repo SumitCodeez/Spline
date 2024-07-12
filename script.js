@@ -115,8 +115,6 @@ function addInteractions() {
   );
 
   if (myObject) {
-    // Apply CSS animation for bounce-in effect
-    myObject.element.style.animation = "bounceIn 1s forwards";
 
     function animate() {
       const targetX = mouseX - canvas.width / 2;
