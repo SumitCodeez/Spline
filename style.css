@@ -99,6 +99,9 @@ img {
   width: 10vh;
   object-fit: cover;
 }
+.navbar img:hover {
+  transform: scale(1.1);
+}
 .navbar .elem {
   display: flex;
   gap: 5vw;
