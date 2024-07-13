@@ -86,31 +86,27 @@ img {
   top: 200px;
 }
 .navbar {
-  height: 20vh;
+  height: 10vh;
   width: 100%;
   padding: 1vh 2vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .navbar img {
-  height: 18vh;
+  height: 10vh;
 }
-
 .navbar .elem {
   display: flex;
   gap: 5vw;
 }
-
 .navbar .elem a {
   text-decoration: none;
   padding: 5px 15px;
-  color: darkblue;
+  color: #3a5077;
   font-size: x-large;
   position: relative;
 }
-
 .navbar a:before,
 .navbar a:after {
   position: absolute;
@@ -118,30 +114,26 @@ img {
   height: 100%;
   width: 2px;
   content: "";
-  background: #095288;
+  background: #3a5077;
   transition: all 0.3s;
 }
-
 .navbar a:before {
   left: 0px;
   top: 0px;
 }
-
 .navbar a:after {
   right: 0px;
   bottom: 0px;
 }
-
 .navbar a:hover:before,
 .navbar a:hover:after {
   opacity: 1;
   height: 2px;
   width: 100%;
 }
-
 .hero {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   /* background-color: #d1cdcd; */
   /* background-color: #ffffff; */
   background-color: #f7f2eb;
