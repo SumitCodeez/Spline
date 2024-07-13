@@ -29,7 +29,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 1000;
 }
 .loader-content {
   width: 40%;
@@ -92,7 +92,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 99;
+  z-index: 100000;
 }
 .navbar img {
   height: 10vh;
@@ -145,7 +145,7 @@ img {
   background-color: #f7f2eb;
 }
 .spacer {
-  padding-top: 16vw;
+  padding-top: 14vw;
 }
 .marquee {
   position: relative;
@@ -182,10 +182,11 @@ img {
 .page2 {
   width: 100vw;
   height: 100vh;
+  background-color: #f7f2eb;
 }
 canvas {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: 1000;
 }

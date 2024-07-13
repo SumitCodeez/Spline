@@ -122,7 +122,7 @@ function startSplineAnimation() {
       defaults: { duration: 3.2, ease: "expo.inOut" },
     });
 
-    tlspline.to(position, { y: 60 }).to(rotation, { y: 0.24 }, 0);
+    tlspline.to(position, { y: 70 }).to(rotation, { y: 0.24 }, 0);
   };
 
   gsap.set(canvas, { autoAlpha: 0 });
