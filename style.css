@@ -30,7 +30,6 @@ img {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  display: none;
 }
 .loader-content {
   width: 40%;
@@ -94,7 +93,7 @@ img {
   justify-content: space-between;
   align-items: center;
   font-family: font;
-  z-index: 1000;
+  z-index: 10000;
 }
 .navbar img {
   height: 10vh;
