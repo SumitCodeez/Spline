@@ -97,6 +97,7 @@ const spline = new Application(canvas);
 
 const init = () => {
   gsap.set(canvas, { autoAlpha: 0 });
+  startLoader();
   loadspline();
 };
 
