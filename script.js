@@ -84,7 +84,7 @@ function startLoader() {
         ease: "power3.inOut",
         duration: 1,
         delay: 4,
-        onComplete: startSplineAnimation, // Start the spline animation after loader completes
+        onComplete: startSplineAnimation, 
       });
     }, 300);
   }
@@ -122,7 +122,7 @@ function startSplineAnimation() {
       defaults: { duration: 3.2, ease: "expo.inOut" },
     });
 
-    tlspline.to(position, { y: 80 }).to(rotation, { y: 0.24 }, 0);
+    tlspline.to(position, { y: 60 }).to(rotation, { y: 0.24 }, 0);
   };
 
   gsap.set(canvas, { autoAlpha: 0 });
