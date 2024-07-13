@@ -94,14 +94,18 @@ const canvas = document.getElementById("canvas");
 const spline = new Application(canvas);
 
 const init = () => {
+  gsap.set(canvas, { autoAlpha: 0 });
   loadspline();
 };
 
 const loadspline = async () => {
   spline
     .load("https://prod.spline.design/hoU1IRriLYqe4Tq4/scene.splinecode")
-    .then(() => {
+    .then(async () => {
+      await startLoader();
       addInteractions();
+
+      gsap.to(canvas, { autoAlpha: 1 });
     });
 };
 const addInteractions = () => {
@@ -124,4 +128,3 @@ const addInteractions = () => {
 };
 
 window.addEventListener("DOMContentLoaded", init);
-startLoader();
