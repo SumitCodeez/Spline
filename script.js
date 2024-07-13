@@ -165,6 +165,15 @@ function marqueeEffect() {
     currentScroll = this.window.pageYOffset;
   });
 }
+document.querySelectorAll(".navbar a").forEach(function (link) {
+  link.addEventListener("mouseover", function () {
+    this.classList.add("hover-effect");
+  });
+
+  link.addEventListener("mouseout", function () {
+    this.classList.remove("hover-effect");
+  });
+});
 
 window.addEventListener("DOMContentLoaded", function () {
   startLoader();
