@@ -88,10 +88,10 @@ img {
 .hero {
   width: 100vw;
   height: 100vh;
-  background-color: #eee;
+  background-color: #d1cdcd;
 }
 .spacer {
-  padding-top: 17vw;
+  padding-top: 16vw;
 }
 .marquee {
   position: relative;
@@ -117,7 +117,7 @@ img {
 .arrow {
   width: 60px;
   height: 100px;
-  margin: 0 2em;
+  margin: 0 5em;
   transform: rotate(0deg);
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -128,7 +128,6 @@ img {
 .page2 {
   width: 100vw;
   height: 100vh;
-  background: #000;
 }
 canvas {
   position: absolute;
