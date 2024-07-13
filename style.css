@@ -91,7 +91,7 @@ img {
 }
 .spacer {
   font-family: font;
-  margin-top: 18vw;
+  padding-top: 18vw;
 }
 .marquee {
   position: relative;
