@@ -188,7 +188,5 @@ canvas {
   position: relative;
   top: 0;
   left: 0;
-  max-width: 100vw;
-  max-height: 100vh;
   z-index: 99;
 }
