@@ -84,7 +84,7 @@ function startLoader() {
         ease: "power3.inOut",
         duration: 1,
         delay: 4,
-        onComplete: startSplineAnimation, 
+        onComplete: startSplineAnimation,
       });
     }, 300);
   }
@@ -102,7 +102,7 @@ function startSplineAnimation() {
       .then(async () => {
         addInteractions();
 
-        gsap.to(canvas, { autoAlpha: 1,duration:1.5,ease:"power2.inOut" });
+        gsap.to(canvas, { autoAlpha: 1, duration: 1.5, ease: "power2.inOut" });
       });
   };
 
@@ -128,7 +128,45 @@ function startSplineAnimation() {
   gsap.set(canvas, { autoAlpha: 0 });
   loadspline();
 }
+function marqueeEffect() {
+  let currentScroll = 0;
+  let isScrollingDown = true;
+  let arrows = document.querySelectorAll(".arrow");
+
+  let tween = gsap
+    .to(".marquee__part", {
+      xPercent: -100,
+      repeat: -1,
+      duration: 5,
+      ease: "linear",
+    })
+    .totalProgress(0.5);
+
+  gsap.set(".marquee__inner", { xPercent: -50 });
+
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset > currentScroll) {
+      isScrollingDown = true;
+    } else {
+      isScrollingDown = false;
+    }
+
+    gsap.to(tween, {
+      timescale: isScrollingDown ? 1 : -1,
+    });
+
+    arrows.forEach((arrow) => {
+      if (isScrollingDown) {
+        arrow.classList.remove("active");
+      } else {
+        arrow.classList.add("active");
+      }
+    });
+    currentScroll = this.window.pageYOffset;
+  });
+}
 
 window.addEventListener("DOMContentLoaded", function () {
   startLoader();
+  marqueeEffect();
 });
