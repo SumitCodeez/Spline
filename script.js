@@ -102,7 +102,7 @@ function startSplineAnimation() {
       .then(async () => {
         addInteractions();
 
-        gsap.to(canvas, { autoAlpha: 1 });
+        gsap.to(canvas, { autoAlpha: 1,duration:1.5,ease:"power2.inOut" });
       });
   };
 
