@@ -12,7 +12,8 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-family: Gilroy;
+  font-family: Font;
+  overflow-x: hidden;
 }
 img {
   width: 100%;
@@ -194,7 +195,20 @@ img {
 .page2 {
   width: 100vw;
   height: 100vh;
-  background-color: #f7f2eb;
+  background-color: #fbc4a2;
+}
+.page2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.page2 h1 {
+  width: 100%;
+  color: #3a5077;
+  font-size: 48vw;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
 }
 canvas {
   position: absolute;
