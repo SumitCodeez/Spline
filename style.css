@@ -85,11 +85,66 @@ img {
   position: relative;
   top: 200px;
 }
+.navbar {
+  height: 20vh;
+  width: 100%;
+  padding: 1vh 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar img {
+  height: 18vh;
+}
+
+.navbar .elem {
+  display: flex;
+  gap: 5vw;
+}
+
+.navbar .elem a {
+  text-decoration: none;
+  padding: 5px 15px;
+  color: darkblue;
+  font-size: x-large;
+  position: relative;
+}
+
+.navbar a:before,
+.navbar a:after {
+  position: absolute;
+  opacity: 0.5;
+  height: 100%;
+  width: 2px;
+  content: "";
+  background: #095288;
+  transition: all 0.3s;
+}
+
+.navbar a:before {
+  left: 0px;
+  top: 0px;
+}
+
+.navbar a:after {
+  right: 0px;
+  bottom: 0px;
+}
+
+.navbar a:hover:before,
+.navbar a:hover:after {
+  opacity: 1;
+  height: 2px;
+  width: 100%;
+}
+
 .hero {
   width: 100vw;
   height: 100vh;
   /* background-color: #d1cdcd; */
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  background-color: #f7f2eb;
 }
 .spacer {
   padding-top: 16vw;
