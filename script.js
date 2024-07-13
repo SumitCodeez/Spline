@@ -172,9 +172,25 @@ function parallaxEffect() {
     { id: "#card-3", endTranslateX: -2000, rotate: 45 },
     { id: "#card-4", endTranslateX: -1500, rotate: -30 },
   ];
+
+  ScrollTrigger.create({
+    trigger: ".wrapper",
+    start: "top top",
+    end: "+=900vh",
+    scrub: true,
+    pin: true,
+    onUpdate: (self) => {
+      gsap.to(".wrapper", {
+        x: `${-350 * self.progress}vw`,
+        duration: 0.5,
+        ease: "power3.inOut",
+      });
+    },
+  });
 }
 
 window.addEventListener("DOMContentLoaded", function () {
+  parallaxEffect();
   startLoader();
   marqueeEffect();
 });
