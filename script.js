@@ -77,7 +77,6 @@ function startLoader() {
         duration: 1,
         delay: 3,
       });
-
       gsap.to(".loader", {
         opacity: 0,
         ease: "power3.inOut",
@@ -85,6 +84,9 @@ function startLoader() {
         delay: 4,
       });
     }, 300);
+    gsap.to("#canvas", {
+      opacity: 1,
+    });
   }
   updateCounter();
 }
