@@ -93,7 +93,6 @@ img {
   justify-content: space-between;
   align-items: center;
   z-index: 100000;
-  background-color: #000000;
 }
 .navbar img {
   height: 10vh;
@@ -101,7 +100,7 @@ img {
   object-fit: cover;
 }
 .navbar img:hover {
-  transform: scale(1.8);
+  transform: scale(1.1);
 }
 .navbar .elem {
   display: flex;
@@ -185,8 +184,8 @@ img {
   height: 100vh;
 }
 canvas {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 1000;
 }
