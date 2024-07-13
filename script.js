@@ -187,6 +187,8 @@ function parallaxEffect() {
       });
     },
   });
+
+  
 }
 
 window.addEventListener("DOMContentLoaded", function () {
