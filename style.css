@@ -183,10 +183,11 @@ img {
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .para {
-  font-size: 4vw;
+  font-size: 3vw;
   position: absolute;
-  top: 70%;
+  top: 74%;
   left: 60%;
+  font-weight: 700;
   white-space: wrap;
   color: #3a5077;
 }
