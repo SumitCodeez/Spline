@@ -192,7 +192,7 @@ function parallaxEffect() {
 
   cards.forEach((card) => {
     ScrollTrigger.create({
-      trigger: "card.id",
+      trigger: card.id,
       start: "top top",
       end: "+=1200vh",
       scrub: true,
