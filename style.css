@@ -94,15 +94,18 @@ img {
   align-items: center;
   font-family: font;
 }
+
 .navbar img {
   height: 10vh;
   width: 10vh;
   object-fit: cover;
 }
+
 .navbar .elem {
   display: flex;
   gap: 5vw;
 }
+
 .navbar .elem a {
   text-decoration: none;
   padding: 5px 15px;
@@ -110,33 +113,36 @@ img {
   font-size: x-large;
   position: relative;
 }
-.navbar a:before,
-.navbar a:after {
+
+.navbar .elem a:before,
+.navbar .elem a:after {
   position: absolute;
   opacity: 0.5;
-  height: 100%;
-  width: 2px;
+  height: 2px;
+  width: 0;
   content: "";
   background: #3a5077;
   transition: all 0.3s;
 }
-.navbar a:before {
-  left: 0px;
-  top: 0px;
+
+.navbar .elem a:before {
+  top: 0;
+  left: 0;
 }
-.navbar a:after {
-  right: 0px;
-  bottom: 0px;
+
+.navbar .elem a:after {
+  bottom: 0;
+  right: 0;
 }
-.navbar a:hover:before,
-.navbar a:hover:after {
-  opacity: 1;
-  height: 2px;
+
+.navbar .elem a:hover:before,
+.navbar .elem a:hover:after {
   width: 100%;
 }
+
 .hero {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   /* background-color: #d1cdcd; */
   /* background-color: #ffffff; */
   background-color: #f7f2eb;
