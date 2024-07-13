@@ -93,19 +93,17 @@ img {
   justify-content: space-between;
   align-items: center;
   font-family: font;
+  z-index: 1000;
 }
-
 .navbar img {
   height: 10vh;
   width: 10vh;
   object-fit: cover;
 }
-
 .navbar .elem {
   display: flex;
   gap: 5vw;
 }
-
 .navbar .elem a {
   text-decoration: none;
   padding: 5px 15px;
@@ -113,33 +111,30 @@ img {
   font-size: x-large;
   position: relative;
 }
-
-.navbar .elem a:before,
-.navbar .elem a:after {
+.navbar a:before,
+.navbar a:after {
   position: absolute;
   opacity: 0.5;
-  height: 2px;
-  width: 0;
+  height: 100%;
+  width: 2px;
   content: "";
   background: #3a5077;
   transition: all 0.3s;
 }
-
-.navbar .elem a:before {
-  top: 0;
-  left: 0;
+.navbar a:before {
+  left: 0px;
+  top: 0px;
 }
-
-.navbar .elem a:after {
-  bottom: 0;
-  right: 0;
+.navbar a:after {
+  right: 0px;
+  bottom: 0px;
 }
-
-.navbar .elem a:hover:before,
-.navbar .elem a:hover:after {
+.navbar a:hover:before,
+.navbar a:hover:after {
+  opacity: 1;
+  height: 2px;
   width: 100%;
 }
-
 .hero {
   width: 100vw;
   height: 100vh;
