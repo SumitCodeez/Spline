@@ -88,14 +88,15 @@ img {
 .hero {
   width: 100vw;
   height: 100vh;
-  background-color: #d1cdcd;
+  /* background-color: #d1cdcd; */
+  background-color: #ffffff;
 }
 .spacer {
   padding-top: 16vw;
 }
 .marquee {
   position: relative;
-  color: #0f0f0f;
+  color: #3a5077;
   padding: 30px 0;
   font-weight: 600;
   font-size: 120px;
