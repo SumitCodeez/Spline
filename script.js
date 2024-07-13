@@ -1,3 +1,5 @@
+import { Application } from "@splinetool/runtime";
+
 document.addEventListener("DOMContentLoaded", function () {
   splitTextIntoSpans(".logo p");
 
@@ -82,52 +84,51 @@ function startLoader() {
         ease: "power3.inOut",
         duration: 1,
         delay: 4,
+        onComplete: startSplineAnimation, // Start the spline animation after loader completes
       });
     }, 300);
-    gsap.to("#canvas", {
-      opacity: 1,
-    });
   }
+
   updateCounter();
 }
-import { Application } from "@splinetool/runtime";
 
-const canvas = document.getElementById("canvas");
-const spline = new Application(canvas);
+function startSplineAnimation() {
+  const canvas = document.getElementById("canvas");
+  const spline = new Application(canvas);
 
-const init = () => {
-  gsap.set(canvas, { autoAlpha: 0 });
-  startLoader();
-  loadspline();
-};
+  const loadspline = async () => {
+    spline
+      .load("https://prod.spline.design/hoU1IRriLYqe4Tq4/scene.splinecode")
+      .then(async () => {
+        addInteractions();
 
-const loadspline = async () => {
-  spline
-    .load("https://prod.spline.design/hoU1IRriLYqe4Tq4/scene.splinecode")
-    .then(async () => {
-      await startLoader();
-      addInteractions();
+        gsap.to(canvas, { autoAlpha: 1 });
+      });
+  };
 
-      gsap.to(canvas, { autoAlpha: 1 });
+  const addInteractions = () => {
+    const obj =
+      spline.findObjectByName("obj") ||
+      spline.findObjectById("8174f8a8-928a-4f7e-a036-a0942060badb");
+
+    const position = obj.position;
+    const rotation = obj.rotation;
+
+    gsap.set(position, { y: -800 });
+
+    gsap.set(rotation, { x: 0.1, y: 4.24, z: 0.08 });
+
+    const tlspline = gsap.timeline({
+      defaults: { duration: 3.2, ease: "expo.inOut" },
     });
-};
-const addInteractions = () => {
-  const obj =
-    spline.findObjectByName("obj") ||
-    spline.findObjectById("8174f8a8-928a-4f7e-a036-a0942060badb");
 
-  const position = obj.position;
-  const rotation = obj.rotation;
+    tlspline.to(position, { y: 80 }).to(rotation, { y: 0.24 }, 0);
+  };
 
-  gsap.set(position, { y: -800 });
+  gsap.set(canvas, { autoAlpha: 0 });
+  loadspline();
+}
 
-  gsap.set(rotation, { x: 0.1, y: 4.24, z: 0.08 });
-
-  const tlspline = gsap.timeline({
-    defaults: { duration: 3.2, ease: "expo.inOut" },
-  });
-
-  tlspline.to(position, { y: 80 }).to(rotation, { y: 0.24 }, 0);
-};
-
-window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("DOMContentLoaded", function () {
+  startLoader();
+});
