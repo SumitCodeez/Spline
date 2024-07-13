@@ -93,7 +93,6 @@ img {
   justify-content: space-between;
   align-items: center;
   font-family: font;
-  z-index: 10000;
 }
 .navbar img {
   height: 10vh;
@@ -119,7 +118,7 @@ img {
   width: 2px;
   content: "";
   background: #3a5077;
-  transition: all 0.3s;
+  transition: all ease 0.3s;
 }
 .navbar a:before {
   left: 0px;
