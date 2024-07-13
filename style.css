@@ -29,7 +29,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 999;
 }
 .loader-content {
   width: 40%;
@@ -92,7 +92,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100000;
+  z-index: 99;
 }
 .navbar img {
   height: 10vh;
@@ -187,5 +187,5 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 9;
 }
