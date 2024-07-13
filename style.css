@@ -88,11 +88,11 @@ img {
 .navbar {
   height: 10vh;
   width: 100%;
-  position: absolute;
-  padding: 1vh 2vw;
+  padding: 2vh 2vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: font;
 }
 .navbar img {
   height: 10vh;
