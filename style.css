@@ -196,6 +196,7 @@ img {
   height: 1200vh;
   background-color: #fbc4a2;
   overflow-x: hidden;
+  position: relative;
 }
 .page2 img {
   width: 100%;
