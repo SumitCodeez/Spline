@@ -181,7 +181,7 @@ function parallaxEffect() {
   ScrollTrigger.create({
     trigger: ".wrapper",
     start: "top top",
-    end: "+=150vh",
+    end: "+=100vh",
     scrub: true,
     pin: true,
     onUpdate: (self) => {
