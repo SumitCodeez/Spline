@@ -181,12 +181,12 @@ function parallaxEffect() {
   ScrollTrigger.create({
     trigger: ".wrapper",
     start: "top top",
-    end: "+=120vh",
+    end: "+=150vh",
     scrub: true,
     pin: true,
     onUpdate: (self) => {
       gsap.to(".wrapper", {
-        x: `${-350 * self.progress}vw`,
+        x: `${-250 * self.progress}vw`,
         duration: 0.5,
         ease: "power3.inOut",
       });
