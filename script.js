@@ -197,7 +197,7 @@ function parallaxEffect() {
     ScrollTrigger.create({
       trigger: card.id,
       start: "top top",
-      end: "+=200vh",
+      end: "+=150vh",
       scrub: true,
       onUpdate: (self) => {
         gsap.to(card.id, {
