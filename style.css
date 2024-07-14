@@ -215,7 +215,7 @@ img {
 .page2 .wrapper {
   position: absolute;
   top: 0;
-  width: 300vw;
+  width: 250vw;
   height: 100vh;
   will-change: transform;
 }
