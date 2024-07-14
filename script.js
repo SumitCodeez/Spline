@@ -175,7 +175,7 @@ function parallaxEffect() {
     { id: "#card-1", endTranslateX: -1500, rotate: 45 },
     { id: "#card-2", endTranslateX: -800, rotate: -30 },
     { id: "#card-3", endTranslateX: -1500, rotate: 45 },
-    { id: "#card-4", endTranslateX: -1200, rotate: -30 },
+    { id: "#card-4", endTranslateX: -1000, rotate: -30 },
   ];
 
   ScrollTrigger.create({
