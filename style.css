@@ -197,9 +197,6 @@ img {
   background-color: #fbc4a2;
   overflow-x: hidden;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .page2 img {
   width: 100%;
