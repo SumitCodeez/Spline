@@ -84,7 +84,10 @@ function startLoader() {
         ease: "power3.inOut",
         duration: 1,
         delay: 4,
-        onComplete: startSplineAnimation,
+        onComplete: () => {
+          document.querySelector(".loader").style.display = "none";
+          startSplineAnimation();
+        },
       });
     }, 300);
   }
