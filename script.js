@@ -175,7 +175,7 @@ function parallaxEffect() {
     { id: "#card-1", endTranslateX: -1500, rotate: 45 },
     { id: "#card-2", endTranslateX: -800, rotate: -30 },
     { id: "#card-3", endTranslateX: -1500, rotate: 45 },
-    { id: "#card-4", endTranslateX: -1400, rotate: -30 },
+    { id: "#card-4", endTranslateX: -1200, rotate: -30 },
   ];
 
   ScrollTrigger.create({
@@ -200,9 +200,9 @@ function parallaxEffect() {
       end: "+=150vh",
       scrub: true,
       onUpdate: (self) => {
-        gsap.to(card.id, {
+        gsap.to(document.querySelector(card.id), {
           x: `${card.endTranslateX * self.progress}px`,
-          rotate: `${card.rotate * self.progress * 2}`,
+          rotation: `${card.rotate * self.progress * 2}deg`, 
           duration: 0.5,
           ease: "power3.inOut",
         });
