@@ -193,7 +193,7 @@ img {
 }
 .page2 {
   width: 100%;
-  height: 1200vh;
+  height: 100vh;
   background-color: #fbc4a2;
   overflow-x: hidden;
   position: relative;
@@ -229,7 +229,7 @@ img {
   left: 20%;
 }
 #card-2 {
-  top: 25%;
+  top: 25%; 
   left: 40%;
 }
 #card-1 {
