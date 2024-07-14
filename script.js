@@ -172,10 +172,10 @@ function parallaxEffect() {
   gsap.registerPlugin(ScrollTrigger);
 
   const cards = [
-    { id: "#card-1", endTranslateX: -2000, rotate: 45 },
-    { id: "#card-2", endTranslateX: -1000, rotate: -30 },
-    { id: "#card-3", endTranslateX: -2000, rotate: 45 },
-    { id: "#card-4", endTranslateX: -1500, rotate: -30 },
+    { id: "#card-1", endTranslateX: -1429, rotate: 45 },
+    { id: "#card-2", endTranslateX: -714, rotate: -30 },
+    { id: "#card-3", endTranslateX: -1429, rotate: 45 },
+    { id: "#card-4", endTranslateX: -1071, rotate: -30 },
   ];
 
   ScrollTrigger.create({
